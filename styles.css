@@ -1,0 +1,291 @@
+main {
+    /* Hacemos que main sea el contenedor de referencia para la imagen */
+    position: relative; 
+}
+
+@font-face {
+    font-family:'Raleway';
+    src: url(./fuentes/Raleway/Raleway-Italic-VariableFont_wght.ttf);
+}
+
+body{
+    background-color: #030023;
+    font-family: monospace;
+}
+
+.todo{
+    background: linear-gradient(317deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+min-height: 100vh;
+margin:50px;
+border-radius: 20px;
+padding: 20px;
+}
+.encabezado {
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 180px; /* Añadimos la unidad 'px' */
+    height:170px;
+    border-radius:10px;
+    margin-top: -30px; /* Movemos el logo un poco hacia arriba */
+}
+
+.Geronimo{
+    font-size: 1.2rem;
+    font-family:'Raleway';
+    letter-spacing: 1px;
+    color:#3737ED; /* Este estilo no se está usando actualmente en el HTML */
+}
+.bienvenida{
+    margin-left: 100px;
+    margin-top: 20px; /* Reducimos el margen superior para subir todo el contenido */
+    color:#0d0d83;
+    font-family:'Raleway';
+    font-weight: 200;
+}
+.button-container {
+    margin-left: 100px;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+}
+.cv-button{
+    display: inline-flex; /* Usamos flexbox para alinear contenido */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    /* Quitamos los márgenes que ahora están en el contenedor */
+    padding: 15px 30px; /* Ajustamos el padding */
+    background-color: #12ADCC; /* Un color cian que combina con tu gradiente */
+    color: #030023; /* Texto oscuro para buen contraste */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-family:'Raleway';
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.cv-button:hover {
+    background-color: #f5f5f5; /* Cambia a blanco al pasar el cursor */
+    color: #090979; /* Cambia el color del texto */
+    transform: translateY(-3px); /* Eleva ligeramente el botón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para dar profundidad */
+}
+
+.cv-icon {
+    width: 30px; /* Tamaño del ícono */
+    height: auto;
+    /* Hereda el color del texto del botón (y cambia en el hover) */
+    fill: currentColor; 
+}
+
+.cv-button span {
+    margin-left: 15px; /* Espacio entre el ícono y el texto */
+}
+.work-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0a0a0a; /* Fondo negro como pediste */
+    color: #f7e9e9; /* Texto blanco para contraste */
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.work-button:hover {
+    background-color: #555555; /* Fondo gris al pasar el cursor */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.work-icon {
+    width: 30px;
+    height: auto;
+    fill: currentColor;
+}
+
+.work-button span {
+    margin-right: 15px; /* Espacio entre el texto y el ícono */
+}
+h1{
+    font-family: 'Raleway';
+    margin-left: 100px; /* Alinea el h1 con los otros elementos */
+    margin-top: 20px; /* Espacio superior para separarlo de la bienvenida */
+    color: #080707; /* Color de texto claro para mejor contraste */
+    font-size: 4rem; /* Aumentamos el tamaño de la fuente */
+    line-height: 1.2; /* Ajustamos el espacio entre líneas para que no se solapen */
+}
+.saludo{
+    color:#0d0d61; /* Un azul más brillante y legible, como el del encabezado */
+    /* Quitamos el margen derecho que no es necesario */
+}
+.presentacion{
+    margin-left: 100px;
+    margin-top: -50px; /* Reducimos el espacio superior para acercarlo al título */
+    margin-bottom: 5px; /* Reducimos el espacio antes del botón de CV */
+    color:#350485; /* Un color gris claro para buena legibilidad */
+    font-family:'Raleway';
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: 150px; /* Espacio para separar del contenido principal */
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px; /* Espaciado interno */
+}
+
+.footer-content p {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    font-family: 'Raleway';
+}
+
+.social-links {
+    display: flex;
+    gap: 25px; /* Espacio entre los íconos */
+}
+
+.social-links svg {
+    width: 28px;
+    height: 28px;
+    fill: #c0c0c0; /* Color inicial de los íconos */
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover svg {
+    fill: #00d4ff; /* Cambia al color cian del gradiente en hover */
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+}
+
+.hero-visuals {
+    position: absolute;
+    top: 50%; /* Lo posicionamos en el 50% vertical de la sección */
+    right: 50px;
+    transform: translateY(-50%); /* Lo centramos perfectamente en el eje Y */
+}
+
+.contact-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-title {
+    color: #f5f5f5;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.arrow-icon {
+    width: 45px;
+    height: auto;
+    fill: #00d4ff;
+}
+
+.image-and-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.trabajo{
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.contact-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column; /* Apila los íconos */
+    gap: 20px; /* Espacio entre los íconos */
+}
+
+.contact-links svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+.contact-links a:hover svg {
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+/* Colores de marca para cada logo */
+.contact-links a:nth-child(1) svg { fill: #E1306C; } /* Instagram */
+.contact-links a:nth-child(2) svg { fill: #0077B5; } /* LinkedIn */
+.contact-links a:nth-child(3) svg { fill: #EA4335; } /* Gmail/Google */
+
+.gmail-link {
+    position: relative; /* Necesario para posicionar los elementos hijos */
+}
+
+.tooltip {
+    position: absolute;
+    right: 120%; /* Lo posicionamos a la izquierda del ícono */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Raleway';
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Evita que el tooltip interfiera con el mouse */
+}
+
+.gmail-link:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-feedback {
+    position: absolute;
+    bottom: 110%; /* Lo posicionamos arriba del ícono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Verde para indicar éxito */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-feedback.visible {
+    opacity: 1;
+}

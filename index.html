@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geronimo</title>
+</head>
+<body>
+    <div class="todo">
+    <header class="encabezado">
+        <img src="./imagenes/logo.png" alt="logo" class="logo">
+    </header>
+    <main>
+        <p class="bienvenida">Bienvenido a mi pagina</p>
+        <h1>Hola, mi<br>nombre es <span class="saludo">Gero</span></h1>
+        <p class="presentacion">Soy un joven tecnico empezando en el <br> mundo laboral, con proyectos y ganas de aprender</p>
+        <div class="button-container">
+            <a href="CV.pdf" class="cv-button" download>
+                <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                <span>Descarga mi CV</span>
+            </a>
+            <a href="#" class="work-button">
+                <span>Mira mi trabajo</span>
+                <svg class="work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
+        </div>
+        <div class="hero-visuals">
+            <div class="contact-title-container">
+                <p class="contact-title">CONTACTAME</p>
+                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22l-4-4h3V3h2v15h3l-4 4z"/></svg>
+            </div>
+            <div class="image-and-links">
+                <img src="./imagenes/trabajo.jpeg" alt="gero trabajando" class="trabajo">
+                <div class="contact-column">
+                    <div class="contact-links">
+                        <a href="https://www.instagram.com/ger0_v11/" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/villagran-geronimo-ba20a037b" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="mailto:ggeronimov992@gmail.com" aria-label="Email" class="gmail-link" onclick="copyEmail(event)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                            <span class="tooltip">ggeronimov992@gmail.com</span>
+                            <span class="copy-feedback">¡Copiado!</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Geronimo Villagran. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
