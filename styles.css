@@ -289,3 +289,91 @@ footer {
 .copy-feedback.visible {
     opacity: 1;
 }
+
+/* --- Estilos para Dispositivos Móviles --- */
+
+@media (max-width: 768px) {
+    .todo {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .encabezado {
+        justify-content: center; /* Centramos el logo */
+    }
+
+    .logo {
+        margin-top: 0;
+        width: 120px;
+        height: auto;
+    }
+
+    /* Centramos el contenido de texto y eliminamos márgenes laterales */
+    .bienvenida,
+    h1,
+    .presentacion,
+    .button-container {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .bienvenida {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reducimos el tamaño del título */
+        line-height: 1.1;
+    }
+
+    .presentacion {
+        margin-top: -20px;
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column; /* Apilamos los botones */
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .cv-button, .work-button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        width: 80%; /* Hacemos que los botones ocupen un ancho similar */
+        justify-content: center;
+    }
+
+    /* --- Ajustes de la sección visual y de contacto --- */
+
+    .hero-visuals {
+        position: static; /* Quitamos el posicionamiento absoluto */
+        transform: none; /* Reseteamos la transformación */
+        margin-top: 60px; /* Añadimos espacio arriba */
+        right: auto;
+        top: auto;
+    }
+
+    .contact-title-container {
+        justify-content: center; /* Centramos el título de contacto */
+    }
+
+    .image-and-links {
+        flex-direction: column; /* Apilamos la imagen y los links */
+        gap: 25px;
+    }
+
+    .trabajo {
+        width: 90%; /* Hacemos la imagen más pequeña y adaptable */
+        max-width: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
