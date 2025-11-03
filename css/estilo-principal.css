@@ -1,0 +1,626 @@
+main {
+    /* Hacemos que main sea el contenedor de referencia para la imagen */
+    position: relative; 
+}
+
+@font-face {
+    font-family:'Raleway';
+    /* Ajustamos la ruta para que busque la carpeta 'fuentes' fuera de 'assets' */
+    src: url(../fuentes/Raleway/Raleway-Italic-VariableFont_wght.ttf);
+}
+
+body{
+    background-color: #030023;
+    font-family: monospace;
+}
+
+.todo{
+    background: linear-gradient(317deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+min-height: 100vh;
+margin:50px;
+border-radius: 20px;
+padding: 20px;
+}
+.encabezado {
+    display: flex;
+    justify-content: space-between; /* Pone el logo a la izq. y la nav a la der. */
+    align-items: center;
+    padding: 0 40px 0 20px; /* Añadimos más padding a la derecha para alejarlo de la imagen */
+    height: 120px; /* Reducimos la altura para que la navegación suba un poco */
+}
+
+.navegacion a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-size: 1.6rem; /* Ajustamos el tamaño para que el subrayado quede bien */
+    margin-left: 60px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative; /* Necesario para el pseudo-elemento del subrayado */
+    padding: 10px 10px 15px 10px; /* Aumentamos el padding para subir los enlaces y dar espacio al subrayado */
+}
+
+/* Creamos el subrayado animado */
+.navegacion a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #12ADCC;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0); /* Inicia invisible */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.logo{
+    width: 180px; /* Añadimos la unidad 'px' */
+    height:170px;
+    border-radius:10px;
+    margin-top: -30px; /* Movemos el logo un poco hacia arriba */
+}
+
+.navegacion a:hover, .navegacion a:focus {
+    color: #12ADCC;
+}
+
+/* Hacemos que el subrayado aparezca al pasar el cursor */
+.navegacion a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.Geronimo{
+    font-size: 1.2rem;
+    font-family:'Raleway';
+    letter-spacing: 1px;
+    color:#3737ED; /* Este estilo no se está usando actualmente en el HTML */
+}
+.bienvenida{
+    margin-left: 100px;
+    margin-top: 20px; /* Reducimos el margen superior para subir todo el contenido */
+    color:#0d0d83;
+    font-family:'Raleway';
+    font-weight: 200;
+}
+.button-container {
+    margin-left: 100px;
+    margin-top: 10px;
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+}
+.cv-button{
+    display: inline-flex; /* Usamos flexbox para alinear contenido */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    /* Quitamos los márgenes que ahora están en el contenedor */
+    padding: 15px 30px; /* Ajustamos el padding */
+    background-color: #12ADCC; /* Un color cian que combina con tu gradiente */
+    color: #030023; /* Texto oscuro para buen contraste */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-family:'Raleway';
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave para el efecto hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.cv-button:hover {
+    background-color: #f5f5f5; /* Cambia a blanco al pasar el cursor */
+    color: #090979; /* Cambia el color del texto */
+    transform: translateY(-3px); /* Eleva ligeramente el botón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para dar profundidad */
+}
+
+.cv-icon {
+    width: 30px; /* Tamaño del ícono */
+    height: auto;
+    /* Hereda el color del texto del botón (y cambia en el hover) */
+    fill: currentColor; 
+}
+
+.cv-button span {
+    margin-left: 15px; /* Espacio entre el ícono y el texto */
+}
+.work-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #0a0a0a; /* Fondo negro como pediste */
+    color: #f7e9e9; /* Texto blanco para contraste */
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.work-button:hover {
+    background-color: #555555; /* Fondo gris al pasar el cursor */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.work-icon {
+    width: 30px;
+    height: auto;
+    fill: currentColor;
+}
+
+.work-button span {
+    margin-right: 15px; /* Espacio entre el texto y el ícono */
+}
+h1{
+    font-family: 'Raleway';
+    margin-left: 100px; /* Alinea el h1 con los otros elementos */
+    margin-top: 20px; /* Espacio superior para separarlo de la bienvenida */
+    color: #080707; /* Color de texto claro para mejor contraste */
+    font-size: 4rem; /* Aumentamos el tamaño de la fuente */
+    line-height: 1.2; /* Ajustamos el espacio entre líneas para que no se solapen */
+}
+.saludo{
+    color:#0d0d61; /* Un azul más brillante y legible, como el del encabezado */
+    /* Quitamos el margen derecho que no es necesario */
+}
+.presentacion{
+    margin-left: 100px;
+    margin-top: -50px; /* Reducimos el espacio superior para acercarlo al título */
+    margin-bottom: 5px; /* Reducimos el espacio antes del botón de CV */
+    color:#350485; /* Un color gris claro para buena legibilidad */
+    font-family:'Raleway';
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: 150px; /* Espacio para separar del contenido principal */
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Centramos el texto de copyright que quedó */
+    align-items: center;
+    padding: 0 50px; /* Espaciado interno */
+}
+
+.footer-content p {
+    color: #c0c0c0;
+    font-size: 0.9rem;
+    font-family: 'Raleway';
+}
+
+.hero-visuals {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    margin-top:50px;
+}
+
+.trabajo {
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tooltip {
+    position: absolute;
+    right: 120%; /* Lo posicionamos a la izquierda del ícono */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: 'Raleway';
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Evita que el tooltip interfiera con el mouse */
+}
+
+.gmail-link:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-feedback {
+    position: absolute;
+    bottom: 110%; /* Lo posicionamos arriba del ícono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; /* Verde para indicar éxito */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-feedback.visible {
+    opacity: 1;
+}
+
+/* --- Estilos para la Página de Contacto --- */
+
+.contact-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #f5f5f5;
+    font-family: 'Raleway', sans-serif;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #dcdcdc;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #f5f5f5;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #12ADCC;
+    box-shadow: 0 0 10px rgba(18, 173, 204, 0.5);
+}
+
+.submit-button {
+    /* Reutilizamos el estilo del botón de CV pero con otro texto */
+    align-self: center; /* Centramos el botón */
+    padding: 15px 40px;
+    margin-top: 20px;
+    background-color: #12ADCC;
+    color: #030023;
+    font-size: 1.2rem;
+}
+
+/* Mensaje de éxito del formulario de contacto */
+.form-success-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    color: #f5f5f5;
+    background-color: rgba(18, 173, 204, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.form-success-message.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Estilos para la Página "Acerca de mi" --- */
+.about-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    color: #f5f5f5;
+    font-family: 'Raleway', sans-serif;
+}
+
+.about-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-image {
+    flex-basis: 35%; /* La imagen ocupa un 35% del espacio */
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.about-text {
+    flex-basis: 65%; /* El texto ocupa el resto del espacio */
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #dcdcdc;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #12ADCC;
+    padding-bottom: 10px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-list span {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.skills-list span:hover {
+    background-color: #12ADCC;
+    color: #030023;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos para la Página de Agradecimiento --- */
+.thank-you-section {
+    text-align: center;
+    color: #f5f5f5;
+    padding: 80px 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.thank-you-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.thank-you-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* --- Estilos para Tablets (hasta 1024px) --- */
+@media (max-width: 1024px) {
+    .todo {
+        margin: 20px;
+    }
+
+    .navegacion a {
+        font-size: 1.4rem; /* Un tamaño legible y elegante para tablets */
+        margin-left: 40px;
+        padding: 10px;
+    }
+
+    .bienvenida,
+    h1,
+    .presentacion,
+    .button-container {
+        margin-left: 50px;
+        margin-right: 50px; /* Añadimos margen para que no se pegue a la imagen */
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-visuals {
+        right: 20px;
+        margin-top: 0; /* Reseteamos el margen superior que no se necesita aquí */
+    }
+
+    .trabajo {
+        width: 300px;
+    }
+
+    .cv-button, .work-button {
+        font-size: 1.3rem;
+        padding: 12px 25px;
+    }
+
+    .contact-section {
+        margin: 20px; /* Reducimos el margen en tablets */
+        padding: 10px;
+    }
+
+    .contact-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .thank-you-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        gap: 30px;
+    }
+}
+
+/* --- Estilos para Dispositivos Móviles --- */
+
+@media (max-width: 768px) {
+    .todo {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        height: auto; /* Altura automática en móvil */
+        padding-bottom: 20px;
+    }
+
+    .navegacion a {
+        font-size: 1.3rem; /* Tamaño ideal para móviles */
+        margin-left: 20px;
+        padding: 8px;
+    }
+
+    .navegacion {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo {
+        margin-top: 0;
+        width: 120px;
+        height: auto;
+    }
+
+    /* Centramos el contenido de texto y eliminamos márgenes laterales */
+    .bienvenida,
+    h1,
+    .presentacion,
+    .button-container {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .bienvenida {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reducimos el tamaño del título */
+        line-height: 1.1;
+    }
+
+    .presentacion {
+        margin-top: -20px;
+        font-size: 1rem;
+    }
+
+    .button-container {
+        flex-direction: column; /* Apilamos los botones */
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .cv-button, .work-button {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        width: 80%; /* Hacemos que los botones ocupen un ancho similar */
+        justify-content: center;
+    }
+
+    .hero-visuals {
+        position: static; /* Quitamos el posicionamiento absoluto */
+        transform: none;  /* Reseteamos la transformación */
+        margin-top: 60px; /* Añadimos espacio arriba */
+        right: auto;
+        top: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .trabajo {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .contact-section {
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .submit-button {
+        width: 90%; /* Hacemos el botón más grande y fácil de tocar */
+        padding: 15px;
+    }
+
+    .thank-you-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-container {
+        flex-direction: column; /* Apilamos imagen y texto */
+        align-items: center;
+    }
+
+    .about-image {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+}
