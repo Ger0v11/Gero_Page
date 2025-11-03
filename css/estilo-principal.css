@@ -300,6 +300,7 @@ footer {
 .form-group input,
 .form-group textarea {
     width: 100%;
+    box-sizing: border-box; /* Evita que el padding y borde desborden el contenedor */
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
