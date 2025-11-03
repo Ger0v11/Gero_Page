@@ -320,6 +320,9 @@ footer {
 
 .submit-button {
     /* Reutilizamos el estilo del botón de CV pero con otro texto */
+    font-family: 'Raleway';
+    font-size: 1.2rem;
+    border-radius: 20px;
     align-self: center; /* Centramos el botón */
     padding: 15px 40px;
     margin-top: 20px;
