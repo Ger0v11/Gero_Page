@@ -23,12 +23,51 @@ padding: 20px;
 .encabezado {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Distribuye el espacio */
 }
 .logo{
     width: 180px; /* Añadimos la unidad 'px' */
     height:170px;
     border-radius:10px;
     margin-top: 0px; /* Movemos el logo un poco hacia arriba */
+}
+
+/* --- Estilos para el Menú de Navegación --- */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #c0c0c0;
+    font-family: 'Raleway';
+    font-size: 1.1rem;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #00d4ff;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: #f5f5f5;
+}
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .Geronimo{
@@ -126,7 +165,7 @@ h1{
     line-height: 1.2; /* Ajustamos el espacio entre líneas para que no se solapen */
 }
 .saludo{
-    color:#0d0d61; /* Un azul más brillante y legible, como el del encabezado */
+    color:#030d6d; /* Un azul más brillante y legible, como el del encabezado */
     /* Quitamos el margen derecho que no es necesario */
 }
 .presentacion{
@@ -289,6 +328,81 @@ footer {
     opacity: 1;
 }
 
+/* --- Estilos para el Menú Hamburguesa (Oculto en escritorio) --- */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+}
+
+/* Animación del icono de hamburguesa a 'X' */
+.hamburger-menu.is-active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 7px);
+}
+
+.hamburger-menu.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.is-active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* --- Panel de Navegación Móvil --- */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Empieza fuera de la pantalla */
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: linear-gradient(160deg, #090979, #030023);
+    z-index: 1000;
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-nav.is-active {
+    right: 0; /* Lo trae a la vista */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-nav li {
+    margin-bottom: 30px;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-family: 'Raleway';
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
 /* --- Estilos para Dispositivos Móviles --- */
 
 @media (max-width: 768px) {
@@ -298,7 +412,15 @@ footer {
     }
 
     .encabezado {
-        justify-content: center; /* Centramos el logo */
+        justify-content: space-between; /* Alinea logo a la izq, hamburguesa a la der */
+        padding: 0 10px; /* Añade un poco de padding lateral */
+    }
+
+    .main-nav {
+        display: none; /* Ocultamos el menú de escritorio */
+    }
+    .hamburger-menu {
+        display: flex; /* Mostramos el menú hamburguesa */
     }
 
     .logo {
@@ -323,13 +445,13 @@ footer {
     }
 
     h1 {
-        font-size: 2.5rem; /* Reducimos el tamaño del título */
+        font-size: 2.2rem; /* Reducimos un poco más el tamaño del título */
         line-height: 1.1;
     }
 
     .presentacion {
         margin-top: -20px;
-        font-size: 1rem;
+        font-size: 0.9rem; /* Ajustamos el tamaño para mejor proporción */
     }
 
     .button-container {
@@ -374,5 +496,30 @@ footer {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+}
+
+/* --- Estilos para Dispositivos Móviles MUY PEQUEÑOS (Ej: iPhone 6/7/8) --- */
+
+@media (max-width: 480px) {
+    body {
+        /* Evita el scroll horizontal no deseado */
+        overflow-x: hidden;
+    }
+
+    .logo {
+        width: 100px; /* Hacemos el logo un poco más pequeño */
+    }
+
+    h1 {
+        font-size: 1.9rem; /* Reducimos el título principal */
+    }
+
+    .presentacion {
+        font-size: 0.85rem;
+    }
+
+    .cv-button, .work-button {
+        font-size: 1.1rem; /* Hacemos los botones un poco más compactos */
     }
 }
