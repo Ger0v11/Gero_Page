@@ -1,6 +1,13 @@
 main {
     /* Hacemos que main sea el contenedor de referencia para la imagen */
     position: relative; 
+    display: flex; /* Usamos flexbox para alinear el contenido y la imagen */
+    align-items: center; /* Centramos verticalmente los items */
+}
+
+.hero-content {
+    max-width: 60%; /* El contenido de texto no ocupará más del 60% */
+    padding-right: 30px; /* Espacio para que no se pegue a la imagen */
 }
 
 @font-face {
@@ -79,74 +86,75 @@ padding: 20px;
     color:#3737ED; /* Este estilo no se está usando actualmente en el HTML */
 }
 .bienvenida{
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 20px; /* Reducimos el margen superior para subir todo el contenido */
-    color:#0d0d83;
+    color: #a9a9d9; /* Color más claro para mejor contraste */
     font-family:'Raleway';
     font-weight: 200;
+    font-size: 1.1rem;
 }
 .button-container {
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 10px;
     display: flex;
     gap: 20px; /* Espacio entre los botones */
 }
-.cv-button{
-    display: inline-flex; /* Usamos flexbox para alinear contenido */
-    align-items: center; /* Centra verticalmente el ícono y el texto */
-    /* Quitamos los márgenes que ahora están en el contenedor */
-    padding: 15px 30px; /* Ajustamos el padding */
-    background-color: #12ADCC; /* Un color cian que combina con tu gradiente */
-    color: #030023; /* Texto oscuro para buen contraste */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    font-family:'Raleway';
+
+/* --- Estilos de Botones Refactorizados --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: 'Raleway';
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 50px;
-    border: none;
+    text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease; /* Transición suave para el efecto hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent; /* Borde base transparente */
 }
 
-.cv-button:hover {
-    background-color: #f5f5f5; /* Cambia a blanco al pasar el cursor */
-    color: #090979; /* Cambia el color del texto */
-    transform: translateY(-3px); /* Eleva ligeramente el botón */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para dar profundidad */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Principal (Relleno) */
+.btn-primary {
+    background-color: #12ADCC;
+    color: #030023;
+    border-color: #12ADCC;
+}
+
+.btn-primary:hover {
+    background-color: #f5f5f5;
+    color: #090979;
+    border-color: #f5f5f5;
+}
+
+/* Botón Secundario (Contorno) */
+.btn-secondary {
+    background-color: transparent;
+    color: #f7e9e9;
+    border-color: #f7e9e9;
+}
+
+.btn-secondary:hover {
+    background-color: #f7e9e9;
+    color: #030023;
 }
 
 .cv-icon {
     width: 30px; /* Tamaño del ícono */
     height: auto;
-    /* Hereda el color del texto del botón (y cambia en el hover) */
-    fill: currentColor; 
+    fill: currentColor;
 }
 
-.cv-button span {
+.btn span {
     margin-left: 15px; /* Espacio entre el ícono y el texto */
-}
-.work-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #0a0a0a; /* Fondo negro como pediste */
-    color: #f7e9e9; /* Texto blanco para contraste */
-    text-decoration: none;
-    font-family: 'Raleway';
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.work-button:hover {
-    background-color: #555555; /* Fondo gris al pasar el cursor */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .work-icon {
@@ -154,29 +162,30 @@ padding: 20px;
     height: auto;
     fill: currentColor;
 }
-
-.work-button span {
+/* El botón "Sobre Mí" tiene el ícono a la derecha */
+.btn span + .work-icon {
     margin-right: 15px; /* Espacio entre el texto y el ícono */
+    margin-left: 0;
 }
 h1{
     font-family: 'Raleway';
-    margin-left: 100px; /* Alinea el h1 con los otros elementos */
+    margin-left: 50px; /* Alinea el h1 con los otros elementos */
     margin-top: 20px; /* Espacio superior para separarlo de la bienvenida */
-    color: #080707; /* Color de texto claro para mejor contraste */
+    color: #f5f5f5; /* Color de texto claro para mejor contraste */
     font-size: 4rem; /* Aumentamos el tamaño de la fuente */
     line-height: 1.2; /* Ajustamos el espacio entre líneas para que no se solapen */
 }
 .saludo{
-    color:#0d0d61; /* Un azul más brillante y legible, como el del encabezado */
+    color:#12ADCC; /* Un azul más brillante y legible, como el del encabezado */
     /* Quitamos el margen derecho que no es necesario */
 }
 .presentacion{
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: -50px; /* Reducimos el espacio superior para acercarlo al título */
-    margin-bottom: 5px; /* Reducimos el espacio antes del botón de CV */
-    color:#350485; /* Un color gris claro para buena legibilidad */
+    margin-bottom: 20px; /* Aumentamos el espacio antes de los botones */
+    color:#dcdcdc; /* Un color gris claro para buena legibilidad */
     font-family:'Raleway';
-    font-size: 0.8rem;
+    font-size: 1.1rem; /* Tamaño de fuente más legible */
     line-height: 1.5;
 }
 
@@ -201,10 +210,10 @@ footer {
 
 .hero-visuals {
     position: absolute;
-    top: 50%;
+    top: 45%; /* Ajustamos la posición vertical */
     right: 50px;
-    transform: translateY(-50%);
-    margin-top:50px;
+    transform: translateY(-50%); /* Centramos verticalmente */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
 }
 
 .trabajo {
@@ -253,6 +262,79 @@ footer {
 
 .copy-feedback.visible {
     opacity: 1;
+}
+
+/* --- Estilos para Proyectos Destacados (Homepage) --- */
+.featured-projects {
+    margin: 150px 50px 50px 50px;
+    color: #f5f5f5;
+    font-family: 'Raleway', sans-serif;
+}
+
+.featured-projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #12ADCC;
+    padding-bottom: 15px;
+    display: inline-block; /* Permite que el borde se ajuste al texto */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-content a {
+    color: #12ADCC;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card-content a:hover {
+    color: #f5f5f5;
 }
 
 /* --- Estilos para la Página de Contacto --- */
@@ -321,7 +403,6 @@ footer {
 .submit-button {
     /* Reutilizamos el estilo del botón de CV pero con otro texto */
     font-family: 'Raleway';
-    font-size: 1.2rem;
     border-radius: 20px;
     align-self: center; /* Centramos el botón */
     padding: 15px 40px;
@@ -378,6 +459,12 @@ footer {
     flex-basis: 65%; /* El texto ocupa el resto del espacio */
 }
 
+.about-button {
+    margin-left: 0;
+    margin-top: 30px;
+    gap: 20px; /* Añade espacio entre los botones de la página "Acerca de mí" */
+}
+
 .about-text h2 {
     font-size: 3rem;
     margin-bottom: 20px;
@@ -419,6 +506,57 @@ footer {
     transform: translateY(-2px);
 }
 
+/* --- Estilos para la Página de Proyectos --- */
+.projects-page-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #f5f5f5;
+    font-family: 'Raleway', sans-serif;
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.projects-header h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.projects-header p {
+    font-size: 1.1rem;
+    color: #dcdcdc;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.project-category h3 {
+    font-size: 1.8rem;
+    color: #12ADCC;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.project-item {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #12ADCC;
+}
+
+.project-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
 /* --- Estilos para la Página de Agradecimiento --- */
 .thank-you-section {
     text-align: center;
@@ -449,12 +587,17 @@ footer {
         padding: 10px;
     }
 
+    .hero-content {
+        max-width: 100%; /* Permitimos que el contenido ocupe todo el ancho disponible */
+        padding-right: 0;
+    }
+
     .bienvenida,
     h1,
     .presentacion,
     .button-container {
-        margin-left: 50px;
-        margin-right: 50px; /* Añadimos margen para que no se pegue a la imagen */
+        margin-left: 20px;
+        margin-right: 340px; /* Aumentamos el margen derecho para dejar espacio a la imagen */
     }
 
     h1 {
@@ -463,7 +606,6 @@ footer {
 
     .hero-visuals {
         right: 20px;
-        margin-top: 0; /* Reseteamos el margen superior que no se necesita aquí */
     }
 
     .trabajo {
@@ -495,6 +637,11 @@ footer {
     .about-container {
         gap: 30px;
     }
+}
+
+.featured-projects {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* --- Estilos para Dispositivos Móviles --- */
@@ -531,6 +678,11 @@ footer {
         height: auto;
     }
 
+    main {
+        flex-direction: column; /* Apilamos el contenido y la imagen */
+        align-items: stretch;
+    }
+
     /* Centramos el contenido de texto y eliminamos márgenes laterales */
     .bienvenida,
     h1,
@@ -538,6 +690,7 @@ footer {
     .button-container {
         margin-left: 0;
         margin-right: 0;
+        padding: 0 15px; /* Añadimos un poco de padding lateral */
         text-align: center;
         justify-content: center;
     }
@@ -626,5 +779,13 @@ footer {
 
     .skills-list {
         justify-content: center;
+    }
+
+    .featured-projects {
+        margin: 80px 15px 30px 15px;
+    }
+
+    .featured-projects h2 {
+        font-size: 2rem;
     }
 }

@@ -14,28 +14,72 @@
         <nav class="navegacion">
             <a href="index.html">Inicio</a>
             <a href="html/acerca.html">Acerca de mi</a>
-            <a href="html/contacto.html">Contacto</a>
+            <a href="html/proyectos.html">Proyectos</a>
+            <a href="html/contacto.html">Contacto</a> 
         </nav>
     </header>
     <main>
-        <p class="bienvenida">Bienvenido a mi pagina</p>
-        <h1>Hola, mi<br>nombre es <span class="saludo">Gero</span></h1>
-        <p class="presentacion">Soy un joven tecnico empezando en el <br> mundo laboral, con proyectos y ganas de aprender</p>
-        <div class="button-container">
-            <a href="assets/CV.pdf" class="cv-button" download>
-                <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                <span>Descarga mi CV</span>
-            </a>
-            <a href="#" class="work-button">
-                <span>Mira mi trabajo</span>
-                <svg class="work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-            </a>
+        <div class="hero-content">
+            <p class="bienvenida">Bienvenido a mi pagina</p>
+            <h1>Explorando la<br>tecnología, <span class="saludo">un proyecto a la vez.</span></h1>
+            <p class="presentacion">
+                Soy Gero, un técnico electrónico apasionado por el hardware y el software. <br> 
+                Este es mi espacio para documentar y compartir mis aprendizajes.
+            </p>
+            <div class="button-container">
+                <a href="html/proyectos.html" class="btn btn-primary">
+                    <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>
+                    <span>Explorar Proyectos</span>
+                </a>
+                <!-- Botón para descargar el CV -->
+                <a href="assets/CV.pdf" class="btn btn-secondary" download>
+                    <svg class="cv-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    <span>Descarga mi CV</span>
+                </a>
+                <a href="html/acerca.html" class="btn btn-secondary">
+                    <span>Sobre Mí</span>
+                    <svg class="work-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+            </div>
         </div>
         <!-- Imagen a la derecha -->
         <div class="hero-visuals">
             <img src="assets/imagenes/trabajo.jpeg" alt="Geronimo trabajando en un proyecto" class="trabajo">
         </div>
     </main>
+    <!-- Nueva sección de Proyectos Destacados -->
+    <section class="featured-projects">
+        <h2>Proyectos Destacados</h2>
+        <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <img src="assets/imagenes/robotica.jpg" alt="Proyecto de Robótica">
+                <div class="card-content">
+                    <h3>Robótica Móvil</h3>
+                    <p>Diseño y construcción de robots seguidores de línea y evasores de obstáculos con Arduino.</p>
+                    <a href="html/proyectos.html#robotica">Ver más</a>
+                </div>
+            </div>
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <img src="assets/imagenes/domotica.jpg" alt="Proyecto de Domótica">
+                <div class="card-content">
+                    <h3>Domótica con Bluetooth</h3>
+                    <p>Sistemas de control para el hogar, como cintas transportadoras, manejados desde un smartphone.</p>
+                    <a href="html/proyectos.html#domotica">Ver más</a>
+                </div>
+            </div>
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <img src="assets/imagenes/web.jpg" alt="Proyecto de Desarrollo Web">
+                <div class="card-content">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de la página para el Festival Audiovisual de Cine y un foro para la comunidad escolar.</p>
+                    <a href="html/proyectos.html#web">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Geronimo Villagran. Todos los derechos reservados.</p>
